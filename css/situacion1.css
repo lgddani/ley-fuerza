@@ -1,0 +1,309 @@
+.subtitulos{
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--main-color);
+}
+
+/* Principal-content */
+.principal-content, .datos-masas{
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.introduccion p, .instrucciones p{
+    font-size: 1.5rem;
+}
+
+.instrucciones{
+    margin-top: 2rem;
+}
+
+.sub-heading{
+    font-size: 3.5rem;
+    color: var(--main-color);
+}
+
+.fa-circle-right{
+    margin-right: 1rem;
+    color: var(--main-color);
+}
+
+.datos-masas{
+    display: block;
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+}
+
+.img-referencial{
+    width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.img-referencia{
+    margin: 0 auto;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.coeficiente, .input-masa1{
+    width: 13%;
+    height: 7rem;
+    margin: 0 auto;
+}
+
+.coeficiente label{
+    font-size: 1.3rem;
+}
+
+.coeficiente .input-coe{
+    cursor: not-allowed;
+    display: block;
+}
+
+.input-masa2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-masa2 .masitas2{
+    margin: 1rem;
+}
+
+.h3-sub{
+    text-align: center;
+    color: var(--main-color);
+    font-size: 1.3rem;
+}
+
+.result{
+    margin: 0 auto;
+    margin-top: 10rem;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+
+.simCanvas {
+    border: 2px solid white;
+    background-color: var(--second-bg-color);
+    margin: 0 auto;
+    margin-top: 10rem;
+    display: block;
+}
+
+#graficaCanvas{
+    background-color: #fff;
+    
+}
+
+#ecuacionTexto{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#guardarPDFBtn{
+    background-color: #d22b2b;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: flex;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 5rem;
+}
+
+#guardarPDFBtn:hover{
+    background-color: #f93333;
+}
+
+
+/* Inputs */
+#calcularBtn{
+    background-color: #fff;
+}
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    max-width: 180px;
+}
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 14px;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+} 
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 14px;
+    cursor: text;
+    top: 20px;
+}
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 14px;
+    color: #9b9b9b;
+    pointer-events: none;
+} 
+.form__field:focus {
+    padding-bottom: 5px;
+    font-weight: 600;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #4E7EFD);
+    border-image-slice: 1;
+} 
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 14px;
+    color: #4E7EFD;
+    font-weight: 700;
+}
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+  
+/* Buttons */
+.botones{
+    width: 90%;
+    display: flex;
+    position: absolute;
+}
+.buttons{
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+.botones button {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.7em 2em;
+    border: 3px solid var(--main-color);
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: var(--main-color);
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+    cursor: pointer;
+    margin: 1rem;
+    width: 15rem;
+}
+.botones button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: var(--main-color);
+    z-index: -1;
+}
+.botones button:hover, .botones button:focus {
+    color: white;
+}
+.botones button:hover:before, .botones button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+} 
+.botones button:active {
+    transform: scale(0.9);
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 1100px) {
+
+    /* Introducción */
+    header{
+        width: 100%;
+    }
+
+    .heading{
+        font-size: 4rem;
+    }
+
+    .principal-content, .datos-masas{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .introduccion p, .instrucciones p{
+        font-size: 1.2rem;
+    }
+
+    .sub-heading{
+        font-size: 2.5rem;
+    }
+
+    .coeficiente, .input-masa1{
+        width: 40%;
+        height: 7rem;
+        margin: 0 auto;
+    }
+
+    .input-masa2{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #resultados{
+        width: 90%;
+        height: auto;
+    }
+
+    #simCanvas{
+        width: 300px;
+        height: 200px;
+    }
+
+    #ecuacionRecta{
+        width: 90%;
+        font-size: 1.5rem;
+    }
+
+}
+
+
+
+

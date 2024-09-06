@@ -1,0 +1,136 @@
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.indicaciones{
+    text-align: left;
+}
+
+h3{
+    font-size: 3rem;
+}
+
+#test-container {
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+
+#test-screen{
+    margin-top: 4rem;
+}
+
+#question-container{
+    text-align: left;
+}
+
+#timer{
+    font-size: 4rem;
+    margin-bottom: 4rem;
+}
+
+#results-screen{
+    margin-top: 7rem;
+    font-size: 2rem;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    border-radius: 3px;
+}
+
+button:hover{
+    background-color: #fff;
+}
+
+#options label {
+    display: block;
+    margin: 10px 0;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #fff;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3 ease-in-out;
+    cursor: pointer;
+    margin-top: 5rem;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+
+/* Input */
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem auto !important;
+}
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 14px;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+} 
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 14px;
+    cursor: text;
+    top: 20px;
+}
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 14px;
+    color: #9b9b9b;
+    pointer-events: none;
+} 
+.form__field:focus {
+    padding-bottom: 5px;
+    font-weight: 600;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #4E7EFD);
+    border-image-slice: 1;
+} 
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 14px;
+    color: #4E7EFD;
+    font-weight: 700;
+}
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}

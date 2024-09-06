@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	scroll-behavior: smooth;
+	font-family: "Poppins";
+}
+
+:root {
+	--bg-color: #000;
+	--second-bg-color: #101010;
+	--text-color: #fff;
+	--main-color: #3ddf42;
+    --second-main-color: #7ff95e;
+}
+
+html{
+	font-size: 60%;
+	overflow-x: hidden;
+}
+
+body{
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+
+::-webkit-scrollbar{
+	width: 15px;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: var(--main-color);
+}
+
+::-webkit-scrollbar-track{
+	background-color: var(--bg-color);
+	width: 50px;
+}
+
+.heading{
+	text-align: center;
+	font-size: 6rem;
+	margin: 5rem 0;
+    color: var(--main-color);
+}
+
+.color-azul{
+    color: var(--main-color);
+}
+
+/* -------------------------------------------------- */
+
+.contenido-principal h2{
+    color: var(--main-color);
+}
+
+.cartas-intro{
+    display: inline-flex;
+    margin: 1rem auto;
+    width: 55%;
+    margin-left: 23%;
+}
+
+.card {
+    width: 250px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: #011522;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+
+.circle {
+    padding: 0 4px;
+}
+
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff605c;
+}
+
+.yellow {
+    background-color: #ffbd44;
+}
+
+.green {
+    background-color: #00ca4e;
+}
+
+.card__content{
+    color: white;
+    font-size: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+}
+
+.contenido_teoria{
+    margin: 0 auto;
+    margin-top: 3rem;
+    width: 400px;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+
+    background: #121212; /* Fallback for browsers that don't support gradients */
+    background: linear-gradient(
+    135deg,
+    #121212 25%,
+    #1a1a1a 25%,
+    #1a1a1a 50%,
+    #121212 50%,
+    #121212 75%,
+    #1a1a1a 75%,
+    #1a1a1a
+    );
+    background-size: 40px 40px;
+
+    /* Animation */
+    animation: move 4s linear infinite;
+}
+
+@keyframes show{
+    from{
+        opacity: 0;
+        scale: 25%;
+    }
+
+    to{
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+@keyframes move {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 40px 40px;
+    }
+  }
+
+.contenido_teoria .btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #fff;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3 ease-in-out;
+    cursor: pointer;
+}
+
+.contenido_teoria .btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+.contenido-principal{
+    font-size: 1.5rem;
+    margin-left: 13rem;
+    margin-right: 13rem;
+}
+
+.opciones{
+    display: inline-flex;
+    width: 55%;
+    margin-top: 5rem;
+    margin-left: 23%;
+    background-color: var(--second-bg-color);
+    padding: 4rem;
+    border-radius: 10px;
+}
+
+.opcion1, .opcion2{
+    display: flex;
+    width: 50%;
+
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: show;
+    animation-range: entry 25% cover 60%;
+    animation-fill-mode: both;
+}
+
+.img1, .img2{
+    margin: 0 auto;
+    padding: 2rem;
+    border: 3px solid var(--main-color);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.img1 h3, .img2 h3{
+    font-size: 2rem;
+}
+
+.img1 img, .img2 img{
+    max-width: 20rem;
+}
+
+.img1:hover, .img2:hover{
+	box-shadow: 0 0 25px var(--main-color),
+				0 0 50px var(--main-color);
+	transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 10rem;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    max-width: 100px; /* Ajusta el tamaño del logo según sea necesario */
+    margin-bottom: 10px;
+}
+
+footer .footer-content p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive */
+@media (max-width: 1200px) {
+
+    .contenido-principal{
+        font-size: 1.5rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    
+    .opciones, .cartas-intro{
+        height: 100%;
+        display: inline-block;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .card{
+        margin-top: 1.5rem;
+    }
+
+    .opcion1, .opcion2{
+        width: 100%;
+        margin-top: 3rem;
+    }
+
+    .contenido_teoria{
+        width: 300px;
+        margin-top: 2rem;
+    }
+}

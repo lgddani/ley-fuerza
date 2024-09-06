@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situación 1 (a vs F)</title>
+    <link rel="icon" href="../img/opcion1.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+	<link rel="stylesheet" type="text/css" href="../css/situacion1.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="heading">Relación directamente proporcial</h1>
+    </header>
+
+    <section class="principal-content">
+        <div class="introduccion">
+            <p>En este simulador, descubrirás cómo la masa de un objeto influye en su aceleración cuando se le aplica una fuerza constante. Ajusta los valores de masa y observa cómo cambia la aceleración del objeto en función de sus diferentes masas. Este experimento interactivo te permitirá visualizar de manera práctica la segunda ley de Newton, 𝐹= 𝑚𝑎, y entender cómo la fuerza aplicada se distribuye entre la masa y la aceleración.</p>
+            <br>
+        </div>
+        <div class="instrucciones">
+            <h3 class="sub-heading">Instrucciones</h3>
+            <p><i class="fa-solid fa-circle-right"></i> Ingresar el valor de la masa 1.</p>
+            <p><i class="fa-solid fa-circle-right"></i> Ingresar los valores para la masa 2 (siendo esta un array de datos).</p>
+            <p><i class="fa-solid fa-circle-right"></i> Dar click en Calcular.</p>
+            <p><i class="fa-solid fa-circle-right"></i> Observar la simulación, el <span style="color: red;">objeto de color rojo</span> representa el cuerpo de <span style="color: red;">Masa 1</span>, mientras que el <span style="color: rgb(42, 228, 249);">objeto de color celeste</span> representa el cuerpo de <span style="color: rgb(42, 228, 249);">Masa 2</span>.</p>
+            <p><i class="fa-solid fa-circle-right"></i> La Masa 1 deberá obtener un valor máximo de 0.5 kg.</p>
+            <p><i class="fa-solid fa-circle-right"></i> La Masa 2 deberá obtener un valor entre 0.03 y 0.3 kg.</p>
+            <p><i class="fa-solid fa-circle-right"></i> El objeto de la Masa 1 representa un movimiento lateral hacia la derecha.</p>
+            <p><i class="fa-solid fa-circle-right"></i> El objeto de la Masa 2 representa un movimiento vertical hacia abajo.</p>
+            <p><i class="fa-solid fa-circle-right"></i> Si algún campo no está bien implementado, saldrá una alerta del campo a corregir.</p>
+            <p><i class="fa-solid fa-circle-right"></i> Finalmente, la aplicación mostrará una tabla de resultados de las aceleraciones y fuerzas correspondientes; de la misma manera un gráfico de los datos mediante el método de mínimos cuadrados.</p>
+            <p><i class="fa-solid fa-circle-right"></i> Si el usuario lo desea, puede descargar los resultados en formato PDF a través del botón "Guardar en PDF".</p>
+            <p><i class="fa-solid fa-circle-right"></i> <strong>Si el usuario desea una nueva gráfica, deberá recargar la página.</strong></p>
+        </div>
+    </section>
+
+    <div class="datos-masas">
+        <h3 class="sub-heading">Ingreso de datos</h3>
+        <div class="img-referencial">
+            <img class="img-referencia" src="../img/referencia.jpg" alt="Ley de la Fuerza">
+        </div>  
+        <h3 class="h3-sub">Coeficiente de rozamiento (no editable)</h3>
+        <div class="coeficiente">
+            <div class="form__group field">
+                <input type="number" id="coeficienteRozamiento" class="form__field input-coe" value="0" placeholder="Coeficiente" readonly>
+                <label for="Coeficiente-rozamiento" class="form__label">Coeficiente:</label>
+            </div>       
+        </div>
+        <br><br>
+        <h3 class="h3-sub">Masa 1</h3>
+        <div class="input-masa1">
+            <div class="form__group field">
+                <input type="number" id="masa1" class="form__field" placeholder="Masa 1" required step="0.01" max="1">
+                <label for="masa1" class="form__label">Masa 1</label>
+            </div>
+        </div>
+        <br><br>
+        <h3 class="h3-sub">Masa 2</h3>
+        <div class="input-masa2">
+            <div class="form__group field masitas2">
+                <input type="number" id="masa2-1" class="form__field" placeholder="Masa 2 - 1" required step="0.01" max="0.30" min="0.03">
+                <label for="masa2-1" class="form__label">Masa 2 - 1</label>
+            </div>
+            <div class="form__group field masitas2">
+                <input type="number" id="masa2-2" class="form__field" placeholder="Masa 2 - 2" required step="0.01" max="0.30" min="0.03">
+                <label for="masa2-1" class="form__label">Masa 2 - 2</label>
+            </div>
+            <div class="form__group field masitas2">
+                <input type="number" id="masa2-3" class="form__field" placeholder="Masa 2 - 3" required step="0.01" max="0.30" min="0.03">
+                <label for="masa2-1" class="form__label">Masa 2 - 3</label>
+            </div>
+            <div class="form__group field masitas2">
+                <input type="number" id="masa2-4" class="form__field" placeholder="Masa 2 - 4" required step="0.01" max="0.30" min="0.03">
+                <label for="masa2-1" class="form__label">Masa 2 - 4</label>
+            </div>
+            <div class="form__group field masitas2">
+                <input type="number" id="masa2-5" class="form__field" placeholder="Masa 2 - 5" required step="0.01" max="0.30" min="0.03">
+                <label for="masa2-1" class="form__label">Masa 2 - 5</label>
+            </div>
+        </div>
+
+        <div class="botones">
+            <div class="buttons">
+                <button id="calcularBtn" onclick="calcular()">Calcular</button>
+            </div>
+        </div>
+
+        <div id="resultados" class="result" style="display: none;">
+            <h3 class="sub-heading">Resultados:</h3>
+            <table id="resultadosTabla">
+                <thead>
+                    <tr>
+                        <th>Masa 1</th>
+                        <th>Masa 2</th>
+                        <th>Aceleración (m/s²)</th>
+                        <th>Fuerza (N)</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas se agregarán dinámicamente aquí -->
+                </tbody>
+            </table>
+        </div>
+        
+        <canvas id="simCanvas" class="simCanvas" width="500" height="300" style="display: none;"></canvas>
+
+        <br><br>
+        <div id="graficaContainer" style="display: none;">
+            <h3 class="sub-heading">Gráfica: Aceleración vs Fuerza</h3>
+            <canvas id="graficaCanvas" width="500" height="300"></canvas>
+        </div>
+
+        <!-- Div para mostrar la ecuación de la recta -->
+        <div id="ecuacionRecta" class="result" style="display: none;">
+            <h3 class="sub-heading">Ecuación de la Recta:</h3>
+            <p id="ecuacionTexto"></p>
+        </div>
+
+        <button id="guardarPDFBtn" onclick="guardarPDF()" disabled style="display: none;"><i class="fa-solid fa-file-pdf"></i> Guardar en PDF</button>
+    </div>
+
+    
+    
+    <!-- <footer>
+        <div class="footer-content">
+            <img src="../img/espe.png" alt="Universidad de las Fuerzas Armadas ESPE" class="footer-logo">
+            <p>&copy; 2024 - Universidad de las Fuerzas Armadas ESPE. Todos los derechos reservados.</p>
+            <p>Departamento de Ciencias Exactas - Física 1</p>
+        </div>
+    </footer> -->
+    
+
+    <script src="../js/fo.js"></script>
+    <script src="../js/situacion1.js"></script>
+    <script src="../js/chart.js"></script>
+
+    <script src="../js/jspdf.umd.min.js"></script>
+    <script src="../js/jspdf.plugin.autotable.min.js"></script>
+    <script src="../js/html2canvas.min.js"></script>
+    <script src="../js/pdf-lib.min.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script> -->
+</body>
+</html>

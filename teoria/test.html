@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Selección Múltiple</title>
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <script>
+        window.addEventListener('beforeunload', function (e) {
+            const message = '¿Estás seguro de que quieres salir? Si lo haces, perderás el progreso del test.';
+            e.returnValue = message; // Compatibilidad con navegadores más antiguos
+            return message; // Para navegadores modernos
+        });
+    </script>
+    <div id="test-container">
+        <!-- Pantalla de inicio -->
+        <div id="start-screen">
+            <h1 class="heading">Test de Selección Múltiple</h1>
+            <br>
+            <h3>Indicaciones</h3>
+            <ul class="indicaciones">
+                <li>Ingresar su nombre completo.</li>
+                <li>Las preguntas son de opción múltiple.</li>
+                <li>No se puede regresar las preguntas.</li>
+                <li>Mantiene 10 minutos para responder 10 preguntas.</li>
+                <li>¡Buena suerte!</li>
+            </ul>
+
+            <div class="form__group field">
+                <input type="text" id="student-name" class="form__field" placeholder="Nombre completo" required>
+                <label for="height" class="form__label">Nombre completo</label>
+            </div>
+
+            <button onclick="startTest()">Comenzar Test</button>
+
+        </div>
+
+        <!-- Pantalla del test -->
+        <div id="test-screen" style="display: none;">
+            <div id="timer">Tiempo restante: <span id="time">10:00</span></div>
+            <div id="question-container">
+                <h2 id="question"></h2>
+                <br><br>
+                <div id="options"></div>
+            </div>
+            <button id="next-button" onclick="nextQuestion()">Siguiente</button>
+            <button id="finish-button" onclick="finishTest()" style="display: none;">Finalizar</button>
+            
+        </div>
+
+        <!-- Pantalla de resultados -->
+        <div id="results-screen" style="display: none;">
+            <h1 class="color-azul">Resultados</h1>
+            <p id="result-text"></p>
+            <a class="btn" href="../index.html">Salir</a>
+        </div>
+    </div>
+
+    <script src="../js/test.js"></script>
+</body>
+</html>
