@@ -35,15 +35,15 @@ function calcular() {
     ];
 
     // Verificar que masa1 esté en el rango permitido
-    if (isNaN(masa1) || masa1 < 0.03 || masa1 > 0.5) {
-        alert("Por favor, ingrese un valor de Masa 1 entre 0.03 y 0.5.");
+    if (isNaN(masa1) || masa1 < 0.03 || masa1 > 2) {
+        alert("Por favor, ingrese un valor de Masa 1 entre 0.03kg y 2kg.");
         return;  // Detener la función si masa1 no está en el rango
     }
 
     // Verificar que todas las masas en masa2Array estén en el rango permitido
     for (let i = 0; i < masa2Array.length; i++) {
-        if (isNaN(masa2Array[i]) || masa2Array[i] < 0.03 || masa2Array[i] > 0.3) {
-            alert(`Por favor, ingrese un valor de Masa 2 - ${i+1} entre 0.03 y 0.3.`);
+        if (isNaN(masa2Array[i]) || masa2Array[i] < 0.03 || masa2Array[i] > 2) {
+            alert(`Por favor, ingrese un valor de Masa 2 - ${i+1} entre 0.03 y 2kg.`);
             return;  // Detener la función si alguna masa2 no está en el rango
         }
     }
@@ -312,7 +312,6 @@ async function guardarPDF() {
     // Guardar el PDF
     doc.save('simulacion.pdf');
 }
-
 
 async function fetchImageAsDataUrl(url) {
     const response = await fetch(url);
